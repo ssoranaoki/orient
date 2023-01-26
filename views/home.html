@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非公認！漫画「オリエント」意見＆考察交流サイト</title>
+    <link rel="icon" href="../views/img/戦国武将のアイコン.png">
+    <!-- Bootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../views/css/style.css">
+    <meta name="description" content="ホーム画面です">
+</head>
+
+<body class="home">
+    <div class="container">
+        <div class="side">
+            <div class="side-inner">
+                <ul class="nav flex-colum">
+                    <li class="nav-item"><a href="home.php" class="nav-link"><img src="../views/img/白川郷の古民家のフリーアイコン.png"
+                                alt="ホーム画面アイコン" class="icon"></a></li>
+                    <li class="nav-item"><a href="search.php" class="nav-link"><img src="../views/img/虫眼鏡のアイコン.png"
+                                alt="検索アイコン"></a></li>
+                    <li class="nav-item"><a href="profile.php" class="nav-link"><img
+                                src="../views/img/伊達政宗の甲冑姿のアイコン.png" alt="自分のアイコン" ></a></li>
+                    <li class="nav-item"><a href="post.php" class="nav-link"><img src="../views/img/鉛筆を持つ手のアイコン.png"
+                                alt="投稿アイコン" class="post-write"></a></li>
+                    <li class="nav-item my-icon"><img src="../views/img_uploaded/user/お侍さんアイコン.png" alt="プロフィールアイコン">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-header">
+                <h1>ホーム</h1>
+            </div>
+
+            <!-- 投稿エリア -->
+            <div class="write-post">
+                <div class="my-icon">
+                    <img src="../views/img_uploaded/user/お侍さんアイコン.png" alt="">
+                </div>
+                <div class="input-area">
+                    <form action="post.php" method="post" enctype="multipart/form-data">
+                        <textarea name="body" placeholder="考察＆感想書いてね" maxlength="200"></textarea>
+                        <div class="bottom-area">
+                            <div class="mb-0">
+                                <input type="file" name="image" class="form-control form-control-sm">
+                            </div>
+                            <button class="btn" type="submit">発表</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 仕切りエリア -->
+            <div class="ditch"></div>
+
+            <!-- つぶやき一覧エリア -->
+            <div class="write-list">
+                <div class="write">
+                    <div class="user">
+                        <a href="profile.php?user_id=1">
+                            <img src="../views/img_uploaded/user/お侍さんアイコン.png" alt="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="name">
+                            <a href="profile.php?user_id=1">
+                                <span class="nickname">なおき</span>
+                                <span class="user-name">@naoki ・23日前</span>
+                            </a>
+                        </div>
+                        <p>オリエント最高</p>
+                    </div>
+                </div>
+                <div class="write">
+                    <div class="user">
+                        <a href="profile.php?user_id=2">
+                            <img src="../views/img/武士のフリーアイコン.png" alt="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="name">
+                            <a href="profile.php?user_id=2">
+                                <span class="nickname">次郎</span>
+                                <span class="user-name">@jiro ・24日前</span>
+                            </a>
+                        </div>
+                        <p>僕もです</p>
+                        <img src="../views/img_uploaded/tweet/日本式の城のフリーアイコン.png" alt="" class="post-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
