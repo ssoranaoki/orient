@@ -1,6 +1,10 @@
 /*
 全体
 ****/
+html {
+    height: 100%;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -46,6 +50,8 @@
 }
 
 a {
+    font-size: 13px;
+    color: #1afe;
     text-decoration: none;
 }
 
@@ -198,4 +204,44 @@ a {
 
 .bottom-area .btn {
     margin-top: 10px;
+}
+
+/* 会員登録　（ログイン共用） */
+body.signup {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 100%;
+
+}
+.signup {
+    background-color: antiquewhite;
+
+
+}
+.signup .form-signup {
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    margin: auto;
+}
+.signup .logo-white {
+    margin-bottom: 30px;
+}
+.signup h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.sign input {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-color: #456;
+    color: #fff;
+}
+.signup input:focus {
+    background-color: #fff;
+    border-color: #1afe;
+    color: #fff;
+
 }

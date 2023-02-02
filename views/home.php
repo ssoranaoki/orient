@@ -98,12 +98,17 @@ function buildImagePath(string $name = null, string $type)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>非公認！漫画「オリエント」意見＆考察交流サイト</title>
     <link rel="icon" href="<?php echo HOME_URL; ?>views/img/戦国武将のアイコン.png">
     <!-- Bootstrap CSS  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo HOME_URL; ?>views/css/style.css">
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
+
+    <title>非公認！漫画「オリエント」意見＆考察交流サイト</title>
     <meta name="description" content="ホーム画面です">
 </head>
 
@@ -120,8 +125,8 @@ function buildImagePath(string $name = null, string $type)
                                 src="<?php echo HOME_URL; ?>views/img/伊達政宗の甲冑姿のアイコン.png" alt="自分のアイコン" ></a></li>
                     <li class="nav-item"><a href="post.php" class="nav-link"><img src="<?php echo HOME_URL; ?>views/img/鉛筆を持つ手のアイコン.png"
                                 alt="投稿アイコン" class="post-write"></a></li>
-                    <li class="nav-item my-icon"><img src="<?php echo HOME_URL; ?>views/img_uploaded/user/お侍さんアイコン.png" alt="プロフィールアイコン">
-                    </li>
+                    <li class="nav-item my-icon"><img src="<?php echo HOME_URL; ?>views/img_uploaded/user/お侍さんアイコン.png" alt="プロフィールアイコン" class="js-popover" data-bs-container="body"
+                        data-bs-toggle="popover" data-bs-placement="right" data-bs-html="true" data-bs-content="<a href='profile.php'>プロフィール</a><br><a href='sign-out.php'>ログアウト</a>"></li>
                 </ul>
             </div>
         </div>
@@ -183,6 +188,11 @@ function buildImagePath(string $name = null, string $type)
             <?php endif; ?>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            $('.js-popover').popover();
+        }, false);
+    </script>
 </body>
 
 </html>
