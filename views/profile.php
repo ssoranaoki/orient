@@ -1,42 +1,38 @@
+<?php
+// 設定関連を読み込む
+include_once('../config.php');
+// 便利な関数を読み込む
+include_once('../util.php');
+
+// 投稿一覧
+//
+$view_writes = [
+    [
+        'user_id' => 1,
+        'user_name' => 'naoki',
+        'user_nickname' => '尚希',
+        'user_image_name' => 'お侍さんアイコン.png',
+        'write_body' => 'オリエント最高',
+        'write_image_name' => null,
+        'write_created_at' => '2021-03-15 14:00:00',
+
+    ],
+];
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../views/img/戦国武将のアイコン.png">
-    <!-- Bootstrap CSS  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="../views/css/style.css">
-    <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
-
+    <?php include_once('../views/common/head.php'); ?>
     <title>非公認！漫画「オリエント」意見＆考察交流サイト</title>
     <meta name="description" content="プロフィール画面です">
 </head>
 
 <body class="home profile text-center">
     <div class="container">
-        <div class="side">
-            <div class="side-inner">
-                <ul class="nav flex-colum">
-                    <li class="nav-item"><a href="home.php" class="nav-link"><img src="../views/img/白川郷の古民家のフリーアイコン.png"
-                                alt="ホーム画面アイコン" class="icon"></a></li>
-                    <li class="nav-item"><a href="search.php" class="nav-link"><img src="../views/img/虫眼鏡のアイコン.png"
-                                alt="検索アイコン"></a></li>
-                    <li class="nav-item"><a href="profile.php" class="nav-link"><img
-                                src="../views/img/伊達政宗の甲冑姿のアイコン.png" alt="自分のアイコン" ></a></li>
-                    <li class="nav-item"><a href="post.php" class="nav-link"><img src="../views/img/鉛筆を持つ手のアイコン.png"
-                                alt="投稿アイコン" class="post-write"></a></li>
-                    <li class="nav-item my-icon"><img src="../views/img_uploaded/user/お侍さんアイコン.png" alt="プロフィールアイコン" class="js-popover" data-bs-container="body"
-                        data-bs-toggle="popover" data-bs-placement="right" data-bs-html="true" data-bs-content="<a href='profile.php'>プロフィール</a><br><a href='sign-out.php'>ログアウト</a>"></li>
-                </ul>
-            </div>
-        </div>
+        <?php include_once('../views/common/side.php'); ?>
         <div class="main">
             <div class="main-header">
                 <h1>尚希</h1>
@@ -45,17 +41,17 @@
             <!-- プロフィールエリア -->
             <div class="profile-area">
                 <div class="top">
-                    <div class="user"><img src="../views/img_uploaded/user/お侍さんアイコン.png" alt=""></div>
+                    <div class="user"><img src="<?php echo HOME_URL; ?>views/img_uploaded/user/お侍さんアイコン.png" alt=""></div>
 
                     <?php if (isset($_GET['user_id'])) : ?>
-                    <!-- 相手のページ -->
+                        <!-- 相手のページ -->
                         <?php if (isset($_GET['case'])) : ?>
                             <button class="btn btn-sm">フォローを外す</button>
-                        <?php else: ?>
+                        <?php else : ?>
                             <button class="btn btn-sm btn-reverse">フォローする</button>
                         <?php endif; ?>
-                    <?php else: ?>
-                    <!-- 自分のページ -->
+                    <?php else : ?>
+                        <!-- 自分のページ -->
                         <button class="btn btn-reverse btn-sm" data-bs-toggle="modal" data-bs-target="#js-modal">プロフィール編集</button>
                     <?php endif; ?>
 
@@ -70,7 +66,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="user">
-                                            <img src="../views/img_uploaded/user/お侍さんアイコン.png" alt="">
+                                            <img src="<?php echo HOME_URL; ?>views/img_uploaded/user/お侍さんアイコン.png" alt="">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="mb-1">プロフィール写真</label>
@@ -110,10 +106,20 @@
             <div class="ditch"></div>
 
             <!-- つぶやき一覧エリア -->
+            <?php if (empty($view_writes)) : ?>
+                <p class="p-3">投稿がありません</p>
+            <?php else : ?>
+                <div class="write-list">
+                    <?php foreach ($view_writes as $view_write) : ?>
+                        <?php include('../views/common/write.php'); ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function() {
             $('.js-popover').popover();
         }, false);
     </script>
