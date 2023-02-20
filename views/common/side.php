@@ -9,7 +9,7 @@
                                 src="<?php echo HOME_URL; ?>views/img/伊達政宗の甲冑姿のアイコン.png" alt="自分のアイコン" ></a></li>
                     <li class="nav-item"><a href="post.php" class="nav-link"><img src="<?php echo HOME_URL; ?>views/img/鉛筆を持つ手のアイコン.png"
                                 alt="投稿アイコン" class="post-write"></a></li>
-                    <li class="nav-item my-icon"><img src="<?php echo HOME_URL; ?>views/img_uploaded/user/お侍さんアイコン.png" alt="プロフィールアイコン" class="js-popover" data-bs-container="body"
+                    <li class="nav-item my-icon"><img src="<?php echo htmlspecialchars($view_user['image_path']); ?>" alt="プロフィールアイコン" class="js-popover" data-bs-container="body"
                         data-bs-toggle="popover" data-bs-placement="right" data-bs-html="true" data-bs-content="<a href='profile.php'>プロフィール</a><br><a href='sign-out.php'>ログアウト</a>"></li>
                 </ul>
             </div>
