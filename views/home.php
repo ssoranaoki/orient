@@ -18,7 +18,7 @@
             <!-- 投稿エリア -->
             <div class="write-post">
                 <div class="my-icon">
-                    <img src="<?php echo HOME_URL; ?>views/img_uploaded/user/お侍さんアイコン.png" alt="">
+                    <img src="<?php echo htmlspecialchars($view_user['image_path']) ?>" alt="">
                 </div>
                 <div class="input-area">
                     <form action="post.php" method="post" enctype="multipart/form-data">

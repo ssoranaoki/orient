@@ -40,11 +40,10 @@ function convertToDayTimeAgo(string $datetime)
     } elseif ($diff_sec < 86400) {
         $time = $diff_sec / 3600;
         $unit = '時間前';
-    } elseif ($diff_sec < 2764800) {
+    } elseif ($diff_sec < 27648000) {
         $time = $diff_sec / 86400;
         $unit = '日前';
     } else {
-
         if (date('Y') !== date('Y', $unix)) {
             $time = date('Y年n月j日', $unix);
         } else {
