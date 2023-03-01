@@ -39,11 +39,7 @@
             <?php endif; ?>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function(){
-            $('.js-popover').popover();
-        }, false);
-    </script>
+    <?php include_once('../views/common/foot.php'); ?>
 </body>
 
 </html>
