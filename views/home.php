@@ -12,7 +12,7 @@
         <?php include_once('../views/common/side.php'); ?>
         <div class="main">
             <div class="main-header">
-                <h1>ホーム</h1>
+                <h1>非公認！漫画「オリエント」意見＆考察交流サイト</h1>
             </div>
 
             <!-- 投稿エリア -->
@@ -27,7 +27,7 @@
                             <div class="mb-0">
                                 <input type="file" name="image" class="form-control form-control-sm">
                             </div>
-                            <button class="btn" type="submit">発表</button>
+                            <button class="btn" type="submit">投稿</button>
                         </div>
                     </form>
                 </div>

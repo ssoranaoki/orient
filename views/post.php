@@ -27,7 +27,7 @@
                             <div class="mb-0">
                                 <input type="file" name="image" class="form-control form-control-sm">
                             </div>
-                            <button class="btn" type="submit">発表</button>
+                            <button class="btn" type="submit">投稿</button>
                         </div>
                     </form>
                 </div>

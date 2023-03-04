@@ -12,7 +12,7 @@
         <?php include_once('../views/common/side.php'); ?>
         <div class="main">
             <div class="main-header">
-                <h1><?php echo $view_requested_user['nickname']; ?></h1>
+                <h1>プロフィール</h1>
             </div>
 
             <!-- プロフィールエリア -->
