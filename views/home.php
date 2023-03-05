@@ -12,7 +12,7 @@
         <?php include_once('../views/common/side.php'); ?>
         <div class="main">
             <div class="main-header">
-                <h1>非公認！漫画「オリエント」意見＆考察交流サイト</h1>
+                <h1>非公認！漫画「オリエント」意見＆考察交流サイト!</h1>
             </div>
 
             <!-- 投稿エリア -->
