@@ -11,7 +11,7 @@ html {
 }
 
 .side {
-    width: 90px;
+    width: 100px;
 }
 
 .main {
@@ -66,7 +66,7 @@ a {
 
 .text-sm {
     font-size: 0.7rem;
-    
+
 }
 
 /*
@@ -97,10 +97,30 @@ a {
     border: 0.2px solid #aaa;
 }
 
+/* 右側サイドブロック */
+ /* オリエント公式twitter */
+.side_right {
+    width: 300px;
+}
+.side_right .side-inner-right {
+    position: sticky;
+}
+.timeline {
+    max-width: 100%;
+    border: 1px solid #333;
+    padding: 10px;
+}
+
 @media screen and (max-width: 500px) {
     .side .side-inner img {
         width: 80%;
         margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .side_right {
+        width: 0%;
     }
 }
 
@@ -208,6 +228,8 @@ a {
     margin-right: 5px;
     border: 1px solid #eef;
 }
+
+
 
 @media screen and (max-width: 500px) {
     .home .write-list .write .user {

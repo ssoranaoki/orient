@@ -37,18 +37,30 @@
             <div class="ditch"></div>
 
             <!-- つぶやき一覧エリア -->
-            <?php if (empty($view_writes)): ?>
+            <?php if (empty($view_writes)) : ?>
                 <p class="p-3">投稿がありません</p>
-            <?php else: ?>
+            <?php else : ?>
                 <div class="write-list">
-                    <?php foreach($view_writes as $view_write): ?>
+                    <?php foreach ($view_writes as $view_write) : ?>
                         <?php include('../views/common/write.php'); ?>
                     <?php endforeach; ?>
-                    </div>
+                </div>
             <?php endif; ?>
+
+            <!-- 仕切りエリア -->
+            <div class="ditch"></div>
+            
         </div>
-    </div>
-    <?php include_once('../views/common/foot.php'); ?>
+        <?php include_once('../views/common/foot.php'); ?>
+
+        <div class="side_right">
+            <div class="side-inner-right">
+            <!-- オリエント公式twitter -->
+            <div class="timeline">
+                <a class="twitter-timeline" data-height="500" href="https://twitter.com/orient_magazine?ref_src=twsrc%5Etfw">Tweets by orient_magazine</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
 </body>
 
 </html>
